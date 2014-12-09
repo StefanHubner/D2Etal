@@ -9,8 +9,7 @@
 // ##### Gloves ########################
 [Type] == gloves && [Quality] == crafted # [ItemKnockBack] >= 1 && [ItemAddSkillTab] >= 2 && [IAS] >= 20 && ([Strength] >= 6 || [Dexterity] >= 6) && ([LifeLeech] >= 3 || [ManaLeech] >= 3)
 [Type] == gloves && [Quality] == crafted # [ItemKnockBack] >= 1 && [ItemAddSkillTab] >= 2 && [IAS] >= 20 && [Strength]+[Dexterity] >= 15
-[Type] == gloves && [Quality] == crafted # [ItemCrushingBlow] >= 5 && [LifeLeech] >= 4 && [IAS] >= 20 && ([Strength] >= 6 || [Dexterity] >= 6)
-[Type] == gloves && [Quality] == crafted # [ItemCrushingBlow] >= 5 && [LifeLeech] >= 4 && [Strength]+[Dexterity] >= 15
+[Type] == gloves && [Quality] == crafted 
 
 // ##### Boots #########################
 [Type] == boots && [Quality] == crafted # [LifeLeech] >= 1 && [FRW] >= 30 && [FHR] >= 10 && [FireResist]+[LightResist]+[ColdResist]+[PoisonResist] >= 40
@@ -27,4 +26,4 @@
 [Type] == amulet && [Quality] == crafted # [FCR] >= 15 && [ItemAddClassSkills] >= 2 && [FireResist]+[LightResist]+[ColdResist]+[PoisonResist] >= 50 && ([MaxMana] >= 80 || [MaxHP] >= 30 || [Strength] >= 15 || [Dexterity] >= 5)
 [Type] == amulet && [Quality] == crafted # [LifeLeech] >= 7 && [ItemAddClassSkills] >= 2 && [FireResist]+[LightResist]+[ColdResist]+[PoisonResist] >= 50 && ([ManaLeech] >= 6 || [MaxHP] >= 50 || [Strength] >= 15 || [Dexterity] >= 5)
 [Type] == amulet && [Quality] == crafted # [LifeLeech] >= 7 && [ItemAddClassSkills] >= 2 && [Strength]+[Dexterity] >= 30
-[Type] == amulet && [Quality] == crafted # [ToBlock] >= 5 && [ItemAddClassSkills] >= 2 && [FireResist]+[LightResist]+[ColdResist]+[PoisonResist] >= 50 && ([LifeLeech] >= 4 || [ManaLeech] >= 6 || [MaxHP] >= 30 || [Strength] >= 15 || [Dexterity] >= 5)
+[Type] == amulet && [Quality] == crafted

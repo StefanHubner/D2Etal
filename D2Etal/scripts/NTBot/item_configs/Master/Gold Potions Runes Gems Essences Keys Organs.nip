@@ -1,68 +1,67 @@
-//-----------------------------------------------------------------------------------------------------
-//		This is a list of 'other' items that you want your bot to pick up.
-//
-//		Any item on this list which starts with //[ will NOT be picked up at all
-//		Any item on this list which starts with [ 	will be picked up, THEN kept unid'ed OR checked and then kept if it's good enough.
-//		More detailed instructions can be found at: http://www.projectetal.com/wiki/index.php/Nip_Config
-// -----------------------------------------------------------------------------------------------------
+//##########GOLD##########
+[Type] == Gold # [Gold] >= 3000
 
-//GOLD
-[Type] == Gold # [Gold] >= 1000
+//##########SCROLLS##########
+//[Name] == scrolloftownportal 
+//[Name] == scrollofidentify
 
-//SCROLLS
-[Name] == ScrollofTownPortal 
-[Name] == ScrollofIdentify
+//##########Normal Key##########
+[Name] == key 
 
-//CHEST KEY
-[Name] == Key # # [MaxQuantity] == 12
-
-//UBER QUEST KEYS
+//##########KEYS##########
 [Name] == KeyOfTerror
-[Name] == KeyOfHate
-[Name] == KeyOfDestruction
-//[Name] == KeyOfTerror # # [MaxQuantity] == 3
-//[Name] == KeyOfHate # # [MaxQuantity] == 3
-//[Name] == KeyOfDestruction # # [MaxQuantity] == 3
+[Name] == KeyOfHate 
+[Name] == KeyOfDestruction 
 
-//UBER QUEST ORGANS
-[Name] == MephistosBrain
-[Name] == BaalsEye
-[Name] == DiablosHorn
+//##########ORGANS##########
+[Name] == Mephisto'sBrain
+[Name] == Baal'sEye
+[Name] == Diablo'sHorn
 
-//RESPEC ESSENCES
+// ##### Torch ######################
+//[Name] == LargeCharm && [Quality] == unique
+[Name] == LargeCharm && [Quality] == unique # [itemaddAssassinSkills] >= 1 && [Strength] >= 10 && [FireResist] >= 10 
+[Name] == LargeCharm && [Quality] == unique # [itemaddDruidSkills] >= 1 && [Strength] >= 10 && [FireResist] >= 10
+[Name] == LargeCharm && [Quality] == unique # [itemaddSorceressSkills] >= 1 && [Strength] >= 10 && [FireResist] >= 10
+[Name] == LargeCharm && [Quality] == unique # [itemaddPaladinSkills] >= 1 && [Strength] >= 10 && [FireResist] >= 10
+[Name] == LargeCharm && [Quality] == unique # [itemaddamazonskills] >= 1 && [Strength] >= 10 && [FireResist] >= 10
+[Name] == LargeCharm && [Quality] == unique # [itemaddnecromancerskills] >= 1 && [Strength] >= 10 && [FireResist] >= 10
+[Name] == LargeCharm && [Quality] == unique # [itemaddbarbarianskills] >= 1 && [Strength] >= 10 && [FireResist] >= 10
+
+//##########ESSENCES##########
 //[Name] == TwistedEssenceOfSuffering # # [MaxQuantity] == 2
 //[Name] == ChargedEssenceOfHatred # # [MaxQuantity] == 2
 //[Name] == BurningEssenceOfTerror # # [MaxQuantity] == 2
 //[Name] == FesteringEssenceOfDestruction # # [MaxQuantity] == 2
-[Name] == TokenOfAbsolution # # [MaxQuantity] == 5
+[Name] == TokenOfAbsolution # # [MaxQuantity] == 1
 
-//RUNES
-//[Name] == ElRune # # [MaxQuantity] == 3
-//[Name] == EldRune # # [MaxQuantity] == 3
+//##########RUNES##########
+//[Name] == ElRune # # [MaxQuantity] == 2
+//[Name] == EldRune # # [MaxQuantity] == 2
 //[Name] == TirRune # # [MaxQuantity] == 3
 //[Name] == NefRune # # [MaxQuantity] == 3
-//[Name] == EthRune # # [MaxQuantity] == 3
+//[Name] == EthRune # # [MaxQuantity] == 2
 //[Name] == IthRune # # [MaxQuantity] == 3
-//[Name] == TalRune # # [MaxQuantity] == 3
+//[Name] == TalRune # # [MaxQuantity] == 2
 //[Name] == RalRune # # [MaxQuantity] == 3
-//[Name] == OrtRune # # [MaxQuantity] == 3
-//[Name] == ThulRune # # [MaxQuantity] == 3
+//[Name] == OrtRune # # [MaxQuantity] == 2
+//[Name] == ThulRune # # [MaxQuantity] == 2
 //[Name] == AmnRune # # [MaxQuantity] == 3
 //[Name] == SolRune # # [MaxQuantity] == 3
 //[Name] == ShaelRune # # [MaxQuantity] == 3
 //[Name] == DolRune # # [MaxQuantity] == 3
-//[Name] == HelRune # # [MaxQuantity] == 3
+//[Name] == HelRune # # [MaxQuantity] == 2
 //[Name] == IoRune # # [MaxQuantity] == 3
 //[Name] == LumRune # # [MaxQuantity] == 3
-//[Name] == KoRune # # [MaxQuantity] == 3
-[Name] == FalRune # # [MaxQuantity] == 3
-[Name] == LemRune # # [MaxQuantity] == 3
-[Name] == PulRune # # [MaxQuantity] == 5
-[Name] == UmRune # # [MaxQuantity] == 5
-[Name] == MalRune # # [MaxQuantity] == 5
+//[Name] == KoRune # # [MaxQuantity] == 1
+//[Name] == FalRune # # [MaxQuantity] == 3
+//[Name] == LemRune # # [MaxQuantity] == 3
+[Name] == PulRune 
+[Name] == UmRune 
+[Name] == MalRune 
 [Name] >= IstRune && [Name] <= ZodRune
 
-//GEMS
+//##########GEMS##########
 //[Name] == ChippedAmethyst # # [MaxQuantity] == 1
 //[Name] == ChippedDiamond # # [MaxQuantity] == 1
 //[Name] == ChippedEmerald # # [MaxQuantity] == 1
@@ -99,14 +98,18 @@
 [Name] == PerfectSkull # # [MaxQuantity] == 3
 [Name] == PerfectTopaz # # [MaxQuantity] == 3
 
-//POTIONS
+//##########POTIONS##########
 [Name] == SuperHealingPotion
 [Name] == SuperManaPotion
+[Name] == GreaterManaPotion
+[Name] == RejuvenationPotion
 [Name] == RejuvenationPotion
 [Name] == FullRejuvenationPotion
 
-//EARS 
+//###########EAR#############
 // Used in conjunction with the HostileKill function
 // If you want to collect ears, then simply uncomment
 
-//[Type] == PlayerBodyPart && [Quality] == Normal
+//[Type] == playerbodypart && [Quality] == normal
+
+

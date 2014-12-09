@@ -1,4 +1,5 @@
 
+
 // ============================================================================
 // 			Mule Notify
 // ============================================================================
@@ -7,10 +8,10 @@ var MuleNotification = true; // Set to true to send status to manager
 // ============================================================================
 // 		Mule Specific vars
 // ============================================================================
-var MuleGamePassword = ""; // Consistant through all games
-var muleAccountPassword = ""; // for all mule accounts
-var CharPrefix = "";
-var AccountPrefix = "";
+var MuleGamePassword = "magic"; // Consistant through all games
+var muleAccountPassword = "magic4711"; // for all mule accounts
+var CharPrefix = "MM";
+var AccountPrefix = "MM";
 var CreateCharacterClass = 4;  // 0:Amazon, 1:Sorceress, 2:Necromancer, 3:Paladin, 4:Barbarian, 5:Druid, 6:Assassin 
 var Hardcore = false;
 var Ladder = true;
@@ -19,18 +20,18 @@ var Classic = false;
 // =============================================================================
 // Leader Account settings
 // =============================================================================
-var leaderAccountName = ""; 
-var leaderName = "";
+var leaderAccountName = "Edler_I"; 
+var leaderName = "MagicSorc_II";
 // =============================================================================
 
 // Leecher game entry delays use to stagger when leechers join game...
 // [characterName, delay in milliseconds]...just leave these as they are if you don't want to 
 // use them
 // =============================================================================
-var leecher1 = ["characterName", 100];
-var leecher2 = ["characterName", 750];
-var leecher3 = ["characterName", 1250];
-var leecher4 = ["characterName", 2000];
+var leecher1 = ["MagicBarb_II", 100];
+var leecher2 = ["MagicNecro_II", 200];
+var leecher3 = ["MagicSorc_II", 300];
+var leecher4 = ["MagicAma_II", 300]
 
 //==============================================================================
 // join options

@@ -1,0 +1,2 @@
+<Tue, Dec 09, 11:09> - <D2NT Error> C:\Users\edler\Dropbox\D2NT\NewEtal\D2Etal\D2Etal\scripts\libs\common\NTAttack.ntl(97) : ReferenceError: NTConfig_FarCastAma is not defined
+<Tue, Dec 09, 11:14> - <D2NT Error> C:\Users\edler\Dropbox\D2NT\NewEtal\D2Etal\D2Etal\scripts\libs\common\NTAttack.ntl(97) : ReferenceError: NTConfig_FarCastAma is not defined

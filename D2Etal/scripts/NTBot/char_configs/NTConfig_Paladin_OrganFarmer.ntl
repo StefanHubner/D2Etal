@@ -24,6 +24,16 @@ function NT_LoadConfig()
 	NTConfig_AvoidRD = 180;								// Time in seconds to wait in town before creating next game (NTConfig_JustAHunter must be true)
 
 	//------------------------------------------------------------------------------
+	// Aura Stacking
+	//		Note: There are no failsafes, these are heavy beta. For manually enhanced play ONLY.
+	//		(Gear WILL be dropped.)
+	//------------------------------------------------------------------------------
+	//NTConfig_Script.push("NTAuraStacking.ntj"); 		// THIS IS NOT SAFE, WE ARE NOT RESPONSIBLE FOR LOST GEAR!!!!
+		NTConfig_ArmorStack 	= 0;					// Stacks armor aura the # of times, 0 to disable
+		NTConfig_HelmStack 		= 0;					// Stacks helm aura the # of times, 0 to disable
+		NTConfig_WeaponStack 	= 0;					// Stacks weapon aura the # of times, 0 to disable
+
+	//------------------------------------------------------------------------------
 	// Boss configuration
 	//------------------------------------------------------------------------------
 
@@ -115,7 +125,7 @@ function NT_LoadConfig()
 		NTConfig_ClearTheHole = -1;						// 0 : Snag chests only, 1 : Clear All, 2 : Clear While Skipping Regular Monsters, -1 : Disable
 	//NTConfig_Script.push("NTTamoeHighland.ntj");
 		NTConfig_ClearTamoe = 0;						// 0 : Don't Clear, 1 : Clear All, 2 : Clear While Skipping Regular Monsters
-		NTConfig_ClearTamoePit = -1; 					// 0 : Chest Only, 1 : Clear All, 2 : Clear While Skipping Regular Monsters, -1 : Disable
+		NTConfig_ClearTamoePit = -1; 					// 0 : Snag chests, 1 : Path only, 2 : Clear Pit level 1, -1 : Disable
 	//NTConfig_Script.push("NTOuterCloister.ntj");
 		NTConfig_ClearOCloister = 0; 					// 0 : Don't Clear, 1 : Clear All, 2 : Clear While Skipping Regular Monsters
 	//NTConfig_Script.push("NTBarracks.ntj");
@@ -215,8 +225,7 @@ function NT_LoadConfig()
 		NTConfig_ClearRiverOfFlame = -1; 				// 0 : Hephasto only, 1 : Clear All, 2 : Clear While Skipping Regular Monsters, -1 : Disable
 	//NTConfig_Script.push("NTChaosSanctuary.ntj");
 		NTConfig_Dodge = false;	 						//
-		NTConfig_FastChaos = false;	 					// Set true to clear seal area/bosses, false for full
-		NTConfig_EvenFasterChaos = false;				// Set to true to clear ONLY the seal bosses at each seal.
+		NTConfig_FastChaos = false;	 					// Set true to clear seals/bosses, false for full
 		NTConfig_Entrance = false;	 					// Set true to start from Entrance, false for Star
 		NTConfig_LeechSupport = false;	 				// Set true to support leechers, false if not
 
@@ -331,6 +340,12 @@ function NT_LoadConfig()
 	//NTConfig_Script.push("TLInventory.ntj"); 					// Add this line to your NT Config to run it
 		NTConfig_TLInventory_SkipEquipped   = true;        		// true = just log stash and inventory
 
+	//NTConfig_Script.push("NTManual.ntj");						// run this script to play manually with some enhancements including auto potting etc
+		NTConfig_PickitOn = false; 								// this will run the pickit as well set to false if you don't want to use it
+		NTConfig_ShowEnemies = false; 							//set to true to show enemies on map
+		NTConfig_RevealMap = false; 								// set to true to reveal map
+		NTConfig_CheckStuff = false; 							// set to true to print a warning when you have used 3 or more mp or hp pots, or if merc is dead, or if you have less than 4 tp scrolls remaining
+
 	NTConfig_HostileHandler = true;					// true to use the new hostile handler
 		RunFromHostiles = true;						// true to leave game when hostiled
 		KillHostiler = true;						// true to kill the hostile player
@@ -339,39 +354,43 @@ function NT_LoadConfig()
 	//------------------------------------------------------------------------------
 	// Speed settings
 	//------------------------------------------------------------------------------
-	me.maxgametime = 1200; 							// time in seconds, maximum game length (0 is infinite)
-	NTConfig_MinIngameTime = 0;						// Amount of minutes to remain ingame. Ensures game length. Setting is in minutes
-	NTConfig_StartDelay = 0;						// Delay time in milliseconds to start;
-	NTConfig_AreaDelay = 500;						// Delay time in milliseconds to change area;
-	NTConfig_SnagDelay = 500;						// Delay time in milliseconds to wait before starting picking items
+	me.maxgametime = 1200; 		// time in seconds, maximum game length (0 is infinite)
+	NTConfig_StartDelay = 0;		// Delay time in milliseconds to start;
+	NTConfig_AreaDelay = 500;	// Delay time in milliseconds to change area;
+	NTConfig_SnagDelay = 500;	// Delay time in milliseconds to wait before starting picking items
 
 	//------------------------------------------------------------------------------
 	// Chicken settings
 	//------------------------------------------------------------------------------
-	NTConfig_SkipHealLife = 90;							// If you are over this percentage of life, you won't go to a healer.
-	NTConfig_SkipHealMana = 70;							// If you are over this percentage of mana, you won't go to a healer.
+	NTConfig_SkipHealLife = 90;		// If you have more than this percent of life, you won't go to a healer
+	NTConfig_SkipHealMana = 70;		// If you have more than this percent of mana, you won't go to a healer
 
-	NTConfig_LifeThresh = 85;							// Drink a health potion if under this percent of life.
-	NTConfig_LifeRejuvThresh = 45;						// Drink a rejuvenation potion if under this percent of life. (Will not use health potions under this %)
-	NTConfig_ManaThresh = 30;							// Drink a mana potion if under this percent of mana.
-	NTConfig_ManaRejuvThresh = 0;						// Drink a rejuvenation potion if under this percent of mana. (Will not use mana potions under this %)
+	NTConfig_LifeThresh = 85;		// Drink a normal potion if under this percent of life.
+	NTConfig_LifeRejuvThresh = 45;	// Drink a rejuvenation potion if under this percent of life.
+	NTConfig_ManaThresh = 30;		// Drink a normal potion if under this percent of mana.
+	NTConfig_ManaRejuvThresh = 0;	// Drink a rejuvenation potion if under this percent of mana.
 
-	NTConfig_EtalLifeChicken = 30;						// This is your Etal chicken life percent. If you go below this life total, exit D2.
+	NTConfig_LifeChicken = 20;							// This is your D2NT chicken life percent. If you go below this life total, exit game.
+	NTConfig_ManaChicken = 0;							// This is your D2NT chicken mana percent. If you go below this mana total, exit game.
+
+	// These chicken values are optional and can run alongside the traditional D2NT chicken or as a standalone chicken
+	// The Etal version comes with additional logging and will restart D2 instead of exitting the game for crash protection
+	// To disable, use 0
+	NTConfig_EtalLifeChicken = 0;						// This is your Etal chicken life percent. If you go below this life total, exit D2.
 	NTConfig_EtalManaChicken = 0;						// This is your Etal chicken mana percent. If you go below this mana total, exit D2.
-	NTConfig_ChickenStyle = 0;							// What kind of chicken? 0 to CloseD2 - 1 to Exit game (Closing D2 is safer)
-	
-	NTConfig_TPChicken = 0; 							// Under this % of health will attempt to tp to town and heal. (Set 0 to disable.)
+
+	NTConfig_TPChicken = 60; 		// life percent for tp chicken set to zero if you don't want to use
 	NTConfig_MercTPChicken = 0;						  	// Under this % of Merc health will attempt to tp to town and heal. (Set to 0 to disable.)
 
-	NTConfig_MercLifeThresh = 50;						// Give merc a health potion if under this percent of life.
-	NTConfig_MercRejuvThresh = 30;						// Give merc a rejuvenation potion if under this percent of life. (Will not use health potions under this %)
-	NTConfig_MercChicken = 0;							// This is your mercs chicken life percent. If he goes below this, exit game. (Set 0 to disable.)
+	NTConfig_MercLifeThresh = 50;	// This is the threshold to use a life potion on your merc in percent.
+	NTConfig_MercRejuvThresh = 0;	// This is the threshold to use a rejuv potion on your merc in percent.
+	NTConfig_MercChicken = 0;		// This is your mercs chicken life percent. If he goes below this, exit game.
 
 	//------------------------------------------------------------------------------
 	// Inventory settings
 	//------------------------------------------------------------------------------
 	NTConfig_FreeSpaceBeforeBoss = 2;			// # of free columns you want if less than that it bot will town before killing bosses
-	NTConfig_FreeSpace = 4;								// Number of free columns. If bot has less than this amount after id'ing, it will go to stash.
+	NTConfig_FreeSpace = 0;				// Number of free columns. If the bot has less than this amount after id'ing it will go to stash
 
 	// The numbers correspond to your inventory. Set 0 to keep whatever is there, 1 to stash it.
 	NTConfig_Columns[0] = [0,0,0,0,0,0,0,0,0,0];
@@ -638,10 +657,6 @@ function NT_LoadConfig()
 	NTConfig_MercStats = false;						// Prints Merc stats to Common Log with Char stats if true
 	NTConfig_VoyageToMissingWps = true; 				// when missing a wp setting this to true will have the bot path to and grab the missing wp
 
-	NTConfig_ChatRecording = false;		// Logs all in game chat to a .txt file in D2NT/scripts/logs/ChatR folder
-	NTConfig_WhisperToManager = false;		// Logs whispers from in-game to your manager
-	NTConfig_WhisperToTab = "common";		// Choose which tab whispers go to, either "common" or "item"
-	
 	//-------------------------------------------------------------------------------
 	// Advanced XML Item Logging
 	//-------------------------------------------------------------------------------
@@ -708,7 +723,7 @@ function NT_LoadConfig()
 	NTConfig_IdentAtCain = false;						// Identify @ Cain? (Quicker & will skip using cain if something in inventory is suppose to be kept unidentified. Will not log sold items.)
 	NTConfig_PocketChange = 500000;						// Amount of gold you want to keep on hand used for repairs. Make adjustments to this & repair % to keep equipment from breaking.
 	NTConfig_DontCainAct = [];							// List any act you don't want to use cain on seperated by ",".  Set to "0" to id in all acts.
-	NTConfig_Repair = "60";								// Set to how much durability you want to repair at, 40 is normal, 99 is as soon as you loose one point.
+	NTConfig_Repair = "40";								// Set to how much durability you want to repair at, 40 is normal, 99 is as soon as you loose one point.
 	NTConfig_AlwaysUseCain = false;						// Always use cain to ID? (Will ID items which are set to keep unid if they are in the inventory when visiting Cain.)
 	NTConfig_DropCainItems = false;						// set to true to drop items/false sells them to vendor
 
@@ -767,7 +782,7 @@ function NT_LoadConfig()
 	NTConfig_AttackSkill[8] = -1;	// Tertiary aura. Set to -1 if you won't
 	prewavespot = [15092, 5028];		// x, y coord for place toon stands before waves crash.  This is for baal, walking baal, and for baalhelper scripts
 
-	NTconfig_HighMaxAttack = false;				// set to true to bypass lowmaxattacks and only use the high attack setting
+	NTconfig_HighMaxAttack = true;				// set to true to bypass lowmaxattacks and only use the high attack setting
 	NTConfig_HighMaxAttackAreas = [131];			// if above is set to false add area id's to use high max attacks on.  Highly recommend using in baal throne room
 
 	MonstersToAttackFirst = 					// add or subtract monster id's to attack first in a mob monsters that resurrect or spawn others are good choices here
@@ -777,7 +792,7 @@ function NT_LoadConfig()
 	481,482,483,484,485,486,529];
 
 	NTConfig_HighMaxAttacks = 300;				// set number of attacks to use
-	NTConfig_LowMaxAttacks = 20;					// set number of attacks before skipping
+	NTConfig_LowMaxAttacks = 15;					// set number of attacks before skipping
 
 	NTConfig_AttackingThis = false; // Used to say target monsters ID/Name - Primarily for Dev purposes
 
@@ -788,13 +803,13 @@ function NT_LoadConfig()
 	// 01=Potion. 02=Poison. 04=Amplify Damage. 08=Weaken. 10=Iron Maiden. 20=Decrepify. 40=Lower Resist. 80=Blood Mana.
 	// Use this format: ['01','02'] etc. Add as many or as little as you want.
 
-	NTConfig_CheckSelfSafe = ['01'];
+	NTConfig_CheckSelfSafe = [];
 
 	// Check merc's safe. Set to []; if you wont.
 	// 01=Death, 02=Poison, 04=Amplify Damage, 08=Weaken, 10=Iron Maiden, 20=Decrepify, 40=Lower Resist
 	// Use this format: ['01','02'] etc. Add as many or as little as you want.
 
-	NTConfig_CheckMercSafe = ['01'];
+	NTConfig_CheckMercSafe = [];
 
 	//------------------------------------------------------------------------------
 	// Class Specific settings

@@ -6,9 +6,6 @@ var NTConfig_Script = [];
 
 // Class Specific Var's
 	var DebugAttacksInGame;
-	// Amazon
-		var NTConfig_FarCastAma;
-		var NTConfig_FCRange;
 	// Assassin
 		var NTConfig_UseTraps;
 		var NTConfig_UseFade;
@@ -87,17 +84,16 @@ var NTConfig_Script = [];
 		var NTConfig_StaticBossesOnly;
 		var NTConfig_StaticBossesSelect = [];
 		var KBLSpamPos = [];
-		var NTConfig_EnchantSelf;
 
 // Cloner Var's
 	var NTConfig_HotIP = [];
 	var NTConfig_SaySomethingNoob;
 	var NTConfig_JustAHunter;
 	var NTConfig_AvoidRD;
-//Aura Stack							// Need removed eventually
-	var NTConfig_ArmorStack;			// Need removed eventually
-	var NTConfig_HelmStack;				// Need removed eventually
-	var NTConfig_WeaponStack;			// Need removed eventually
+//Aura Stack
+	var NTConfig_ArmorStack;
+	var NTConfig_HelmStack;
+	var NTConfig_WeaponStack;
 // Leech/Fighter
 	var NTConfig_Leader;
 	var NTConfig_PartyOnlyLeader;
@@ -105,7 +101,7 @@ var NTConfig_Script = [];
 	var NTConfig_LeechBo;
 	var NTConfig_LeechExitDelay;
 	var NTConfig_WaitForCowPortal;
-	var NTConfig_followDelay;
+	var NTConfig_LeechFrom;
 	var NTConfig_TakeTpDiablo;
 	var NTConfig_UseChatCommandPortal;
 	var LeechTrav_TakeTp;
@@ -207,13 +203,10 @@ var NTConfig_Script = [];
 		var NTConfig_ClearRiverOfFire;
 		var NTConfig_Dodge;
 		var NTConfig_FastChaos;
-		var NTConfig_EvenFasterChaos;
 		var NTConfig_Entrance;
 		var NTConfig_LeechSupport;
-		var NTConfig_DiaSpam;
-		var NTConfig_CS_SafeTP;
-		var NTConfig_CS_HotTP;
-		var NTConfig_followDelay;
+		var NTConfig_CS_EntranceTP;
+		var NTConfig_CS_StarTP;
 		var NTConfig_CS_NextGame;
 		var NTConfig_CS_LeechSupTP;
 		var NTConfig_CS_SealBasher;
@@ -287,7 +280,6 @@ var NTConfig_Script = [];
 	var NTConfig_StartDelay;
 	var NTConfig_AreaDelay;
 	var NTConfig_SnagDelay;
-	var NTConfig_MinIngameTime;
 // Chicken
 	var NTConfig_SkipHealLife;
 	var NTConfig_SkipHealMana;
@@ -295,9 +287,8 @@ var NTConfig_Script = [];
 	var NTConfig_LifeRejuvThresh;
 	var NTConfig_ManaThresh;
 	var NTConfig_ManaRejuvThresh;
-	var NTConfig_LifeChicken;			// Needs removed after a few commits
-	var NTConfig_ManaChicken;			// Needs removed after a few commits
-	var NTConfig_ChickenStyle;
+	var NTConfig_LifeChicken;
+	var NTConfig_ManaChicken;
 	var NTConfig_EtalLifeChicken;
 	var NTConfig_EtalManaChicken;
 	var NTConfig_TPChicken;
@@ -337,7 +328,6 @@ var NTConfig_Script = [];
 	var NTConfig_PublicMode;
 	var NTConfig_CheckCloneDiablo;
 	var NTConfig_SoJWaitTime;
-	var NTConfig_ExitonDclone;// testing
 	var NTConfig_FastPickit;
 	var NTConfig_UseMerc;
 	var NTConfig_ResetEnigma;
@@ -365,10 +355,6 @@ var NTConfig_Script = [];
 	var NTConfig_PropsForEtal;
 	var NTConfig_MercStats;
 	var NTConfig_VoyageToMissingWps;
-	var NTConfig_ChatRecording;
-	var NTConfig_WhisperToManager;
-	var NTConfig_WhisperToTab;
-
 // XML Logging
 	var NTConfig_UseXMLItemlog;
 	var NTConfig_IndependantLog;
@@ -496,31 +482,3 @@ var NTConfig_Announcer;
 var NTConfig_LevelMin;
 var NTConfig_Output;
 var NTConfig_LogIt;
-
-// NTHelper.ntj
-var NTConfig_AllowCommands;
-var NTConfig_DoNotFollowAreas;
-var NTConfig_DoNotAttackAreas;
-var NTConfig_PortalAtLeechersCorpses;
-var NTConfig_MessageDeadPlayers;
-var NTConfig_DeadPlayerMsg;
-var NTConfig_GreetPlayers;
-var NTConfig_GreetMsg;
-var NTConfig_HelperHumor;
-var NTConfig_Quest_Cain;
-var NTConfig_Quest_Radament;
-var NTConfig_Quest_Izual;
-var NTConfig_Quest_Tome;
-var NTConfig_Quest_Shenk;
-var NTConfig_Quest_Anya;
-var NTConfig_Quest_Ancients;
-var NTConfig_Quest_Baal;
-var NTConfig_TpHarem;
-var NTConfig_KillCouncils;
-var NTConfig_ClearCS;
-var NTConfig_CSDodge;
-
-// Chanter variables
-	var NTConfig_ChantLocation;
-	var NTConfig_PortalWait;
-	var NTConfig_DisplayTime;

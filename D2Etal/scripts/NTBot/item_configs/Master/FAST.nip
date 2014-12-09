@@ -1,5 +1,16 @@
 //##########GOLD##########
-[Type] == Gold # [Gold] >= 5000
+[Type] == Gold # [Gold] >= 3000
+
+//##########KEYS##########
+[Name] == KeyOfTerror
+[Name] == KeyOfHate 
+[Name] == KeyOfDestruction 
+
+//##########ORGANS##########
+[Name] == Mephisto'sBrain
+[Name] == Baal'sEye
+[Name] == Diablo'sHorn
+
 
 //##########RUNES##########
 [Name] == PulRune
@@ -15,6 +26,17 @@
 [Name] == PerfectSapphire
 [Name] == PerfectSkull
 [Name] == PerfectTopaz
+
+// ##### Torch ######################
+//[Name] == LargeCharm && [Quality] == unique
+[Name] == LargeCharm && [Quality] == unique # [itemaddAssassinSkills] >= 1 && [Strength] >= 10 && [FireResist] >= 10 
+[Name] == LargeCharm && [Quality] == unique # [itemaddDruidSkills] >= 1 && [Strength] >= 10 && [FireResist] >= 10
+[Name] == LargeCharm && [Quality] == unique # [itemaddSorceressSkills] >= 1 && [Strength] >= 10 && [FireResist] >= 10
+[Name] == LargeCharm && [Quality] == unique # [itemaddPaladinSkills] >= 1 && [Strength] >= 10 && [FireResist] >= 10
+[Name] == LargeCharm && [Quality] == unique # [itemaddamazonskills] >= 1 && [Strength] >= 10 && [FireResist] >= 10
+[Name] == LargeCharm && [Quality] == unique # [itemaddnecromancerskills] >= 1 && [Strength] >= 10 && [FireResist] >= 10
+[Name] == LargeCharm && [Quality] == unique # [itemaddbarbarianskills] >= 1 && [Strength] >= 10 && [FireResist] >= 10
+
 
 //##########UNIQUE##########
 //UNIQUE GLOVES
@@ -449,6 +471,7 @@
 [Type] == Belt && [Quality] == Rare && [Flag] == Ethereal # [FHR] >= 17 && [Strength] >= 20 && [MaxHP] >= 30 && (([ColdResist]+[FireResist] >= 20) || ([ColdResist]+[LightResist] >= 20) || ([FireResist]+[LightResist] >= 20)) && [ItemReplenishDurability] >= 1
 
 //RARE AXE
+
 [Type] == Axe && [Quality] == Rare && [Flag] == Ethereal # [IAS] >= 20 && ([EnhancedDamage] >= 350 || ([ItemToHitPercentPerLevel] >= 1 && [EnhancedDamage] >= 250) || ([ItemToHitPerLevel] >= 1 && [EnhancedDamage] >= 250) || ([ItemMaxDamagePerLevel] >= 1 && [EnhancedDamage] >= 250))
 
 //RARE SWORD
@@ -543,14 +566,14 @@
 [Type] == Armor && [Quality] == Magic && [Class] == Elite # [Sockets] == 4 && [FHR] >= 24
 
 //MAGIC/RARE +5/+6 LS CLAWS
-[Type] == AssassinClaw && ([Quality] == Rare || [Quality] == Magic) # [AssassinSkills]+[SkillLightningSentry] >= 5
-[Type] == AssassinClaw && ([Quality] == Rare || [Quality] == Magic) # [TrapsSkillTab]+[SkillLightningSentry] >= 5
-[Type] == HandToHand && ([Quality] == Rare || [Quality] == Magic) # [AssassinSkills]+[SkillLightningSentry] >= 5
-[Type] == HandToHand && ([Quality] == Rare || [Quality] == Magic) # [TrapsSkillTab]+[SkillLightningSentry] >= 5
+//[Type] == AssassinClaw && ([Quality] == Rare || [Quality] == Magic) # [AssassinSkills]+[SkillLightningSentry] >= 5
+//[Type] == AssassinClaw && ([Quality] == Rare || [Quality] == Magic) # [TrapsSkillTab]+[SkillLightningSentry] >= 5
+//[Type] == HandToHand && ([Quality] == Rare || [Quality] == Magic) # [AssassinSkills]+[SkillLightningSentry] >= 5
+//[Type] == HandToHand && ([Quality] == Rare || [Quality] == Magic) # [TrapsSkillTab]+[SkillLightningSentry] >= 5
 
 //MAGIC/RARE +5/+6 JAV SKILLS 30+ [IAS] JAVELINS
-([Name] == MaidenJavelin || [Name] == CeremonialJavelin || [Name] == MatriarchalJavelin) && ([Quality] == Rare || [Quality] == Magic) # [IAS] >= 30 && [AmazonSkills]+[JavelinAndSpearSkillTab] >= 4
-([Name] == MaidenJavelin || [Name] == CeremonialJavelin || [Name] == MatriarchalJavelin) && ([Quality] == Rare || [Quality] == Magic) # [IAS] >= 30 && [JavelinAndSpearSkillTab] >= 4
+//([Name] == MaidenJavelin || [Name] == CeremonialJavelin || [Name] == MatriarchalJavelin) && ([Quality] == Rare || [Quality] == Magic) # [IAS] >= 30 && [AmazonSkills]+[JavelinAndSpearSkillTab] >= 4
+//([Name] == MaidenJavelin || [Name] == CeremonialJavelin || [Name] == MatriarchalJavelin) && ([Quality] == Rare || [Quality] == Magic) # [IAS] >= 30 && [JavelinAndSpearSkillTab] >= 4
 
 
 //##########WHITE##########
@@ -569,10 +592,10 @@
 
 //WHITE SHIELDS
 [Name] == SacredTarge && [Quality] <= Superior && [Flag] != Ethereal # [FireResist] >= 40 && [EnhancedDefense] >= 0 && ([Sockets] == 0 || [Sockets] == 3 || [Sockets] == 4)		//Sanctuary, Spirit, Phoenix
-[Name] == SacredTarge && [Quality] < Superior && [Flag] == Ethereal # [FireResist] >= 40 && [Sockets] == 0																		//Exile
+[Name] == SacredTarge && [Quality] < Superior && [Flag] == Ethereal # [FireResist] >= 30 && [Sockets] == 0																		//Exile
 [Name] == SacredTarge && [Quality] < Superior && [Flag] == Ethereal # [EnhancedDamage] >= 60 && [Sockets] == 0																	//Exile
 [Name] == VortexShield && [Quality] <= Superior && [Flag] != Ethereal # [FireResist] >= 45 && [EnhancedDefense] >= 0 && ([Sockets] == 0 || [Sockets] == 3 || [Sockets] == 4)	//Sanctuary, Spirit, Phoenix
-[Name] == VortexShield && [Quality] < Superior && [Flag] == Ethereal # [FireResist] >= 35 && [Sockets] == 0																		//Exile
+[Name] == VortexShield && [Quality] < Superior && [Flag] == Ethereal # [FireResist] >= 30 && [Sockets] == 0																		//Exile
 [Name] == VortexShield && [Quality] < Superior && [Flag] == Ethereal # [EnhancedDamage] >= 60 && [Sockets] == 0																	//Exile
 [Name] == Monarch && [Quality] < Superior && [Flag] == Ethereal # [Defense] >= 215 && [Sockets] == 0																			//Spirit, Phoenix
 [Name] == Monarch && [Quality] <= Superior && [Flag] != Ethereal # [EnhancedDefense] >= 10 && ([Sockets] == 0 || [Sockets] == 4)												//Spirit, Phoenix

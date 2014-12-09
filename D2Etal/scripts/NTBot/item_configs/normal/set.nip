@@ -98,7 +98,7 @@
 //[Name] == JaggedStar && [Quality] == set // Aldur's Rhythm
 
 // ##### Bul Kathos' Children ##########
-//[Name] == ColossusBlade && [Quality] == set // Bul-Kathos' Sacred Charge
+[Name] == ColossusBlade && [Quality] == set // Bul-Kathos' Sacred Charge
 //[Name] == MythicalSword && [Quality] == set // Bul-Kathos' Tribal Guardian
 
 // ##### Cow King's Leathers ###########
@@ -108,7 +108,7 @@
 
 // ##### The Disciple ##################
 //[Type] == amulet && [Quality] == set # [ItemAllSkills] == 1 && [ColdResist] == 18 // Telling of Beads
-//[Name] == BrambleMitts && [Quality] == set // Laying of Hands
+[Name] == BrambleMitts && [Quality] == set // Laying of Hands
 //[Name] == DuskShroud && [Quality] == set // Dark Adherent
 //[Name] == DemonhideBoots && [Quality] == set // Rite of Passage
 //[Name] == MithrilCoil && [Quality] == set // Credendum
@@ -134,17 +134,17 @@
 // ##### Immortal King #################
 [Name] == WarBelt && [Quality] == set // Immortal King's Detail
 [Name] == AvengerGuard && [Quality] == set // Immortal King's Will
-[Name] == OgreMaul && [Quality] == set // Immortal King's Stone Crusher
+//[Name] == OgreMaul && [Quality] == set // Immortal King's Stone Crusher
 [Name] == SacredArmor && [Quality] == set // Immortal King's Soul Cage
 [Name] == WarGauntlets && [Quality] == set // Immortal King's Forge
 [Name] == WarBoots && [Quality] == set // Immortal King's Pillar
 
 // ##### M'avina's Battle Hymn #########
-[Name] == Diadem && [Quality] == set // M'avina's True Sight
-[Name] == GrandMatronBow && [Quality] == set // M'avina's Caster
-[Name] == KrakenShell && [Quality] == set // M'avina's Embrace
-[Name] == BattleGauntlets && [Quality] == set // M'avina's Icy Clutch
-[Name] == SharkskinBelt && [Quality] == set // M'avina's Tenet
+//[Name] == Diadem && [Quality] == set // M'avina's True Sight
+//[Name] == GrandMatronBow && [Quality] == set // M'avina's Caster
+//[Name] == KrakenShell && [Quality] == set // M'avina's Embrace
+//[Name] == BattleGauntlets && [Quality] == set // M'avina's Icy Clutch
+//[Name] == SharkskinBelt && [Quality] == set // M'avina's Tenet
 
 // ##### Natalya's Odium ###############
 //[Name] == GrimHelm && [Quality] == set // Natalya's Totem
@@ -158,10 +158,10 @@
 //[Name] == ElderStaff && [Quality] == set // Naj's Puzzler
 
 // ##### Orphan's Call #################
-//[Name] == WingedHelm && [Quality] == set // Guillaume's Face
-//[Name] == RoundShield && [Quality] == set // Whistan's Guard
-//[Name] == SharkskinGloves && [Quality] == set // Magnus' Skin
-//[Name] == BattleBelt && [Quality] == set // Wilhelm's Pride
+[Name] == WingedHelm && [Quality] == set # [Strength] == 15 // Guillaume's Face
+[Name] == RoundShield && [Quality] == set // Whistan's Guard
+[Name] == SharkskinGloves && [Quality] == set // Magnus' Skin
+[Name] == BattleBelt && [Quality] == set // Wilhelm's Pride
 
 // ##### Sander's Folly ################
 //[Name] == Cap && [Quality] == set # [ItemMagicBonus] == 35 // Sander's Paragon
@@ -177,13 +177,13 @@
 // ##### Tal Rasha's Wrappings #########
 [Name] == SwirlingCrystal && [Quality] == set // Tal Rasha's Lidless Eye
 [Name] == DeathMask && [Quality] == set // Tal Rasha's Horadric Crest
-[Name] == LacqueredPlate && [Quality] == set # [Defense] >= 840 // Tal Rasha's Guardianship
+[Name] == LacqueredPlate && [Quality] == set # [Defense] >= 600 // Tal Rasha's Guardianship
 [Type] == amulet && [Quality] == set # [SorceressSkills] == 2 // Tal Rasha's Adjucation
 [Name] == MeshBelt && [Quality] == set # [ItemMagicBonus] >= 10 // Tal Rasha's Fine-Spun Cloth
 
 // ##### Trang-Oul's Avatar ############
-//[Name] == BoneVisage && [Quality] == set // Trang-Oul's Guise
-//[Name] == ChaosArmor && [Quality] == set // Trang-Oul's Scales
-//[Name] == CantorTrophy && [Quality] == set // Trang-Oul's Wing
-//[Name] == TrollBelt && [Quality] == set // Trang-Oul's Girth
-//[Name] == HeavyBracers && [Quality] == set // Trang-Oul's Claws
+[Name] == BoneVisage && [Quality] == set // Trang-Oul's Guise
+[Name] == ChaosArmor && [Quality] == set // Trang-Oul's Scales
+[Name] == CantorTrophy && [Quality] == set // Trang-Oul's Wing
+[Name] == TrollBelt && [Quality] == set // Trang-Oul's Girth
+[Name] == HeavyBracers && [Quality] == set // Trang-Oul's Claws

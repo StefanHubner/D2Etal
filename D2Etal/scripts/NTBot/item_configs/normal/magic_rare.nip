@@ -65,6 +65,8 @@
 // ##### Staves ########################
 
 // ##### Swords ########################
+//[Type] == sword && [Quality] == rare && [Class] == elite # [EnhancedDamage] >= 150 
+//[Type] == sword && [Quality] == magic && [Class] == elite # [EnhancedDamage] >= 150 
 [Type] == sword && [Quality] == rare && [Flag] == ethereal # [Sockets] >= 0 && [EnhancedDamage] >= 220 && [ItemMaxDamagePerLevel] >= 4 && [ItemToHitPerLevel] >= 33 && [IAS] >= 10
 [Type] == sword && [Quality] == rare && [Flag] == ethereal # [Sockets] >= 0 && [EnhancedDamage] >= 360 && [IAS] >= 10
 ([Name] == CrystalSword || [Name] == GreatSword) && [Quality] == magic # [WarCriesSkillTab] >= 3 && ([LifeLeech] >= 0 || [ManaLeech] >= 0)
@@ -91,8 +93,8 @@
 [Type] == circlet && [Quality] == rare && [Flag] != ethereal # [Sockets] >= 0 && [ItemAddClassSkills] >= 2 && ([Strength] >= 15 || [Dexterity] >= 5) && ([FRW] >= 30 || [FCR] >= 20)
 
 // ##### Rings #########################
-[Type] == ring && [Quality] == magic # ([FCR] >= 10 || [ItemMagicBonus] >= 15) && (([FireResist] >= 12 && [LightResist] >= 12) || [MaxMana] >= 100)
-[Type] == ring && [Quality] == rare # [FCR] >= 10 && [FireResist]+[LightResist]+[ColdResist]+[PoisonResist] >= 32 && [MaxMana] >= 60 && [Strength]+[Dexterity] >= 20
+[Type] == ring && [Quality] == magic # ([FCR] >= 10 || [ItemMagicBonus] >= 15) 
+[Type] == ring && [Quality] == rare # [FCR] >= 10 
 [Type] == ring && [Quality] == rare # [FCR] >= 10 && [FireResist]+[LightResist]+[ColdResist]+[PoisonResist] >= 32 && [MaxMana] >= 60 && [MaxHP] >= 25 && ([Strength] >= 5 || [Dexterity] >= 0)
 [Type] == ring && [Quality] == rare # [ToHit] >= 70 && [FireResist]+[LightResist]+[ColdResist]+[PoisonResist] >= 32 && [LifeLeech]+[ManaLeech] >= 9
 [Type] == ring && [Quality] == rare # [ToHit] >= 70 && [FireResist]+[LightResist]+[ColdResist]+[PoisonResist] >= 32 && ([LifeLeech] >= 6 || [ManaLeech] >= 4) && ([Strength] >= 5 || [Dexterity] >= 0)
@@ -100,8 +102,8 @@
 // ##### Amulets #######################
 [Type] == amulet && [Quality] == magic # [ItemAddSkillTab] >= 3 && ([FCR] >= 10 || [Strength] >= 22)
 [Type] == amulet && [Quality] == magic # ([ItemAddClassSkills] >= 2 || [ItemAddSkillTab] >= 3) && ([MaxHP] >= 70 || [Dexterity] >= 22)
-[Type] == amulet && [Quality] == rare # [ItemAddClassSkills] >= 2 && [FCR] >= 10 && [FireResist]+[LightResist]+[ColdResist]+[PoisonResist] >= 50 && [MaxMana] >= 60 && [Strength]+[Dexterity] >= 30
-[Type] == amulet && [Quality] == rare # [ItemAddClassSkills] >= 2 && [FCR] >= 10 && [FireResist]+[LightResist]+[ColdResist]+[PoisonResist] >= 50 && [MaxMana] >= 60 && [MaxHP] >= 30 && ([Strength] >= 15 || [Dexterity] >= 5)
+[Type] == amulet && [Quality] == magic # [ItemAddClassSkills] >= 2 && [FCR] >= 10 
+[Type] == amulet && [Quality] == rare # [ItemAddClassSkills] >= 2 && [FCR] >= 10 
 [Type] == amulet && [Quality] == rare # [ItemAddClassSkills] >= 2 && [FireResist]+[LightResist]+[ColdResist]+[PoisonResist] >= 50 && ([LifeLeech]+[ManaLeech] >= 9 || [Strength]+[Dexterity] >= 30)
 [Type] == amulet && [Quality] == rare # [ItemAddClassSkills] >= 2 && [FireResist]+[LightResist]+[ColdResist]+[PoisonResist] >= 50 && ([LifeLeech] >= 4 || [ManaLeech] >= 6) && ([Strength] >= 15 || [Dexterity] >= 5)
 
@@ -119,10 +121,11 @@
 [Name] == SmallCharm && [Quality] == magic # (([MaxDamage] >= 3 && [ToHit] >= 8) || [MaxMana] >= 8 || ([FireResist] >= 3 && [LightResist] >= 3)) && ([MaxHP] >= 8 || [FHR] >= 5 || [FRW] >= 3 || [Strength] >= 1 || [Dexterity] >= 1)
 [Name] == SmallCharm && [Quality] == magic # ([FireMaxDam] >= 20 || [LightMaxDam] >= 45 || [ColdMaxDam] >= 15) && ([MaxHP] >= 8 || [FHR] >= 5 || [FRW] >= 3 || [Strength] >= 1 || [Dexterity] >= 1)
 [Name] == SmallCharm && [Quality] == magic # [MaxHP]+[MaxMana] >= 25
+[Name] == SmallCharm && [Quality] == magic # [MaxHP] >= 15 
 [Name] == SmallCharm && [Quality] == magic # [FireMaxDam] >= 30 || [LightMaxDam] >= 75 || [ColdMaxDam] >= 22
 [Name] == SmallCharm && [Quality] == magic && [Prefix] == 1407 && [Suffix] > 0
 [Name] == SmallCharm && [Quality] == magic # [PoisonMaxDam]/10.2 >= 21
-[Name] == SmallCharm && [Quality] == magic # [ItemMagicBonus] >= 7
+[Name] == SmallCharm && [Quality] == magic # [ItemMagicBonus] >= 5 
 
 // ##### Large Charms ##################
 

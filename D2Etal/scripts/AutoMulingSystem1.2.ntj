@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////
 // characters in your game setting: //		
 ////////////////////////////////////////////////////////////////
-var characterdiff        =  "99"; 	//use this to keep those pesky spam bots out of the f'ing game
+var characterdiff        =  "40"; 	//use this to keep those pesky spam bots out of the f'ing game
 var maxNumberOfPlayersss = "8";		//use this to set the maximum number of players allowed in your game
 
 ///////////////////////////////////////////////////
@@ -13,10 +13,10 @@ var MuleNotification = true; // Set to true to send status to manager
 // 		Mule Specific vars
 ///////////////////////////////////////////////////
 var MuleGamePassword = ""; // Consistant through all games
-var muleAccountPassword = ""; // for all mule accounts
-var CharPrefix = "";
-var AccountPrefix = "";
-var CreateCharacterClass = 4;  // 0:Amazon, 1:Sorceress, 2:Necromancer, 3:Paladin, 4:Barbarian, 5:Druid, 6:Assassin 
+var muleAccountPassword = "magic4711"; // for all mule accounts
+var CharPrefix = "MM";
+var AccountPrefix = "MM";
+var CreateCharacterClass = 2;  // 0:Amazon, 1:Sorceress, 2:Necromancer, 3:Paladin, 4:Barbarian, 5:Druid, 6:Assassin 
 var Hardcore = false;
 var Ladder = true;
 var Classic = false;
@@ -26,14 +26,14 @@ var Classic = false;
 ///////////////////////////////////////
 var joinChatAfterGame			= true;			 // join chat after leaving a game
 var joinRandomChannel			= false;		 // if this is true, will join a random channel, otherwise it will use the channel below..
-var joinChannelInChat			= "";		 // Channel you want your bot to join, leave blank to not join a private channel
+var joinChannelInChat			= "op babybaal";		 // Channel you want your bot to join, leave blank to not join a private channel
 
 ///////////////////////////////////////
 //        Message Settings: 		 //		// These controll what your bot sais to the leechers will also send a log incommand to a channel bot
 ///////////////////////////////////////
-var chatMessageOnJoin			= "";	// Chat Message to say Login command for channel bot will only be sent once
-var chatMessageAfterGame1		= "";	// Optional chat message Line #1 to say after each game on Channel
-var chatMessageAfterGame2		= "";		// Optional chat message Line #2 to say after each game on Channel
+var chatMessageOnJoin			= ".login";	// Chat Message to say Login command for channel bot will only be sent once
+var chatMessageAfterGame1		= "MagicBaal's, Lvl 95+ Sorc/Barb/Java/Necro";	// Optional chat message Line #1 to say after each game on Channel
+var chatMessageAfterGame2		= "Average Time: <3 minutes. Super safe and leecher friendly.";		// Optional chat message Line #2 to say after each game on Channel
 var chatMessageAfterGame3		= "";		// Optional chat message Line #3 to say after each game on Channel
 var chatMessageAfterGame4		= "";		// Optional chat message Line #4 to say after each game on Channel
 var chatMessageAfterGame5		= "";	// Optional chat message Line #5 to say after each game on Channel
@@ -41,9 +41,9 @@ var chatMessageAfterGame5		= "";	// Optional chat message Line #5 to say after e
 ///////////////////////////////////////		// These will let you send a message with a game name password and time to your leechers
 //      Game Message Settings:       //		// var saygamename must be true for any of these to work
 ///////////////////////////////////////		// You cant NOT have a - in you game name it will bug it out
-var saygamename 			= false;						// Must be true for any of the game message settings to work
+var saygamename 			= true;						// Must be true for any of the game message settings to work
 var nextgamemessage			= "next game should be";	// This will come befor your next game name eg "New game is"
-var saypassword 			= true;						// This will togle if the bot says your game pw
+var saypassword 			= false;						// This will togle if the bot says your game pw
 var saytime 				= true;						// This will togle if the bot says how much time till creation
 var timemessage 			= "in about";				// This will come after your pw and befor the time eg. "in about" xx seconds say time MUST be true for this to be used
 

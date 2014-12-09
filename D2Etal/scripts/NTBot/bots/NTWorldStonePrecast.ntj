@@ -1,0 +1,47 @@
+var _hostilepause = false;
+var poscount = 1;
+var _trapsPreCasted;
+function NTMain(){
+
+	Include("libs/common/NTCommon.ntl");
+	NTC_IncludeLibs();
+	NTC_IncludeConfig("NTBot/char_configs");
+
+	var i;
+	var _wave;
+	var _starttick;
+	var _checkcnt;
+	
+	NT_LoadConfig();
+	NTSI_LoadNIPFiles("NTBot/item_configs");
+
+	NTA_Initialize();
+
+	if(!NTTM_CheckAct()){
+		NTC_SendMsgToScript("NTBotGame.ntj", "NTTM_CheckAct()");
+		return;
+	}
+	//NTTMGR_TownManager();
+	NTC_Delay(1000);
+	if(!NTTM_TownMove("waypoint")){
+		NTC_SendMsgToScript("NTBotGame.ntj", "NTTM_TownMove()");
+		return;
+	}
+	if(!NTM_TakeWaypoint(129)){
+		NTC_SendMsgToScript("NTBotGame.ntj", "NTM_TakeWaypoint()");
+		return;
+	}
+	
+	var _checkcnt = 0;
+	while(!NTC_IsQuesterIn() && _checkcnt <= 20) {
+		NTC_Delay(500);
+		_checkcnt++;
+	}
+	NTC_Delay(500);
+	NTP_DoPrecast(true);
+	NTC_Delay(1000);
+	NTP_DoPrecast(true);
+	NTC_Delay(500);
+	NTC_SendMsgToScript("NTBotGame.ntj", "SCRIPT_END");
+}
+

@@ -20,12 +20,22 @@ function NT_LoadConfig()
 		NTConfig_JustAHunter = true; 					// Used if only hunting IP's, set true to idle in town (Make sure this is the only script pushed).
 		NTConfig_AvoidRD = 180;							// Time in seconds to wait in town to avoid R/D before creating next game (NTConfig_JustAHunter must be true).
 
+	//------------------------------------------------------------------------------
+	// Aura Stacking
+	//		Note: There are no failsafes, these are heavy beta. For manually enhanced play ONLY.
+	//		(Gear WILL be dropped.)
+	//------------------------------------------------------------------------------
+	//NTConfig_Script.push("NTAuraStacking.ntj"); 		// THIS IS NOT SAFE, WE ARE NOT RESPONSIBLE FOR LOST GEAR!!!!
+		NTConfig_ArmorStack 	= 0;					// Stacks armor aura the # of times, 0 to disable
+		NTConfig_HelmStack 		= 0;					// Stacks helm aura the # of times, 0 to disable
+		NTConfig_WeaponStack 	= 0;					// Stacks weapon aura the # of times, 0 to disable
+
 	//-------------------------------------------------------------------------------
 	// 		Level announcer
 	//-------------------------------------------------------------------------------
 	NTConfig_Announcer = false;								// Run the level announcer
 	NTConfig_LevelMin = 50;									// Lowest level to announce a level up
-	NTConfig_Output = "Congrats on level";					// What to say on level up
+	NTConfig_Output = "Congrats on level";		// What to say on level up
 	NTConfig_LogIt = true;									// log every level up
 
 	//------------------------------------------------------------------------------
@@ -39,20 +49,20 @@ function NT_LoadConfig()
 	NTConfig_LeechExitDelay = 500;						// Delay before leecher exits game after leader in milliseconds.  Use this to stagger leechers exit times to avoid crashes.
 
 	//NTConfig_Script.push("NTLeechCows.ntj");			// Leech fighter cow script.  Must run leader with NTCow.ntj
-		NTConfig_WaitForCowPortal = 240;				// time in seconds to wait for the leader to make cow portal before aborting the script
+		NTConfig_WaitForCowPortal = 240;					// time in seconds to wait for the leader to make cow portal before aborting the script
+
+	//NTConfig_Script.push("NTPassiveChaosLeader.ntj"); // passive chaos leader script for NTPassiveChaosLeecher
+	//NTConfig_Script.push("NTPassiveChaosLeecher.ntj");// passive chaos leecher script. MUST use NTPassiveChaosLeader with it
+
+	//NTConfig_Script.push("NTDiabloLeechFight.ntj");	// (NTConfig_Leader must be configured above).
+		NTConfig_LeechFrom = "S"; 						// (E)ntrance | (S)tar  (Must match leader's setting).
+		NTConfig_TakeTpDiablo = "config me";			// Message from leader signifying you to take portal. (Must be different than Baal & Trav tp messages.)
+		NTConfig_UseChatCommandPortal = true;			// Use portal after TakeTpDiablo message? (False will attempt taking first TP made by leader, ignores TakeTpDiablo.)
 
 	//NTConfig_Script.push("NTTravLeader.ntj");			// Trav Leader
 		LeechTrav_TakeTp =  "config me";				// Message from leader signifying you to take portal. (Must be different than Diablo & Baal tp messages.)
 	//NTConfig_Script.push("NTTravLeech.ntj");			// Trav Leecher (NTConfig_Leader must be configured above).
 		NTConfig_TakeTpTravincal = "config me";			// This must match leaders LeechTrav_TakeTp & must be different than Diablo & Baal tp messages.
-
-	//NTConfig_Script.push("NTUniversalDiabloLeech.ntj");	// (NTConfig_Leader must be configured above).
-		NTConfig_LeechChaos = 0;						// 0 = Portal Leecher, 1 = Leech follow, 2 = Leech Fighter  (leech portals).
-		NTConfig_followDelay = 8000;					// Delay in milliseconds to enter follow portal
-		ChaosLocx = 7763; ChaosLocy = 5267;				//  Hide location for Passive leecher alternate = ChaosLocx = 7767; ChaosLocy = 5263;
-		NTConfig_TakeTpDiablo = "config me";			// Message from leader signifying you to take portal. (Must be different than Baal & Trav tp messages.)
-		NTConfig_UseChatCommandPortal = true;			// Use portal after TakeTpDiablo message? (False will attempt taking first TP made by leader, ignores TakeTpDiablo.)
-
 
 	//NTConfig_Script.push("NTUniversalBaalLeech.ntj");
 		NTConfig_LeechBaal = 1; 						// 1 = Leech Fighter (Tele), 2 = Leech Fighter (Walking), 3 = Passive Leecher (Corner dunce).
@@ -67,29 +77,6 @@ function NT_LoadConfig()
 		_FindXPArea = [];								// Area ID's, (2, 3, 4, 5, 6, 7). Set array empty "[]" to leech without grabbing shrines.
 		NTConfig_ClearAroundShrine = false;				// Clear around shrine before going back to town?
 
-	//NTConfig_Script.push("NTHelper.ntj");														// See http://www.projectetal.com/forums/index.php?threads/beta-ish-release-of-nthelper-ntj.14623/
-		NTConfig_DoNotFollowAreas = [34, 35, 36, 107, 128, 129, 130, 124, 100, 101, 102];		// Won't take a WP or TP to these areas
-		NTConfig_DoNotAttackAreas = [34, 35, 36, 107, 128, 129, 130, 124, 100, 101, 102];		// Won't attack in these areas
-		NTConfig_AllowCommands = false;															// Allows leader to issue commands such as 'exit', 'town', 'follow', etc.  'follow' is ON by default.
-		NTConfig_PortalAtLeechersCorpses = true;												// Make a TP at players corpses when they die near you
-			NTConfig_MessageDeadPlayers = false;												// Send a msg to those players when they die
-			NTConfig_DeadPlayerMsg = "My tp for your corpse";									// The actual message to send
-		NTConfig_GreetPlayers = false;															// Greet players who join your party
-			NTConfig_GreetMsg = "Hello, %name%!";												// The message to send
-		NTConfig_HelperHumor = false;															// 0.3% chance to say a silly phrase and skip doing the command you issued.
-		NTConfig_Quest_Cain				= false;												// true/false to do quests when using rush commands
-		NTConfig_Quest_Radament			= false;												// true/false to do quests when using rush commands
-		NTConfig_Quest_Izual			= false;												// true/false to do quests when using rush commands
-		NTConfig_Quest_Tome				= false;												// true/false to do quests when using rush commands
-		NTConfig_Quest_Shenk			= false;												// true/false to do quests when using rush commands
-		NTConfig_Quest_Anya				= false;												// true/false to do quests when using rush commands
-		NTConfig_Quest_Ancients			= false;												// true/false to do quests when using rush commands
-		NTConfig_Quest_Baal				= false;												// true/false to do quests when using rush commands
-		NTConfig_TpHarem				= false;												// true/false to tp at harem after duriel
-		NTConfig_KillCouncils			= false;												// true/false to kill all counsel members
-		NTConfig_ClearCS 				= false;												// true/false to clear CS when doing diablo quest
-		NTConfig_CSDodge 				= false;												// dodge in CS
-		
 	//------------------------------------------------------------------------------
 	// Boss Configuration
 	//------------------------------------------------------------------------------
@@ -124,7 +111,7 @@ function NT_LoadConfig()
 		NTConfig_ClearTheHole = -1;						// 0 : Snag chests only, 1 : Clear All, 2 : Clear While Skipping Regular Monsters, -1 : Disable
 	//NTConfig_Script.push("NTTamoeHighland.ntj");
 		NTConfig_ClearTamoe = 0;						// 0 : Don't Clear, 1 : Clear All, 2 : Clear While Skipping Regular Monsters
-		NTConfig_ClearTamoePit = -1; 					// 0 : Chest Only, 1 : Clear All, 2 : Clear While Skipping Regular Monsters, -1 : Disable
+		NTConfig_ClearTamoePit = -1; 					// 0 : Snag chests, 1 : Path only, 2 : Clear Pit level 1, -1 : Disable
 	//NTConfig_Script.push("NTOuterCloister.ntj");
 		NTConfig_ClearOCloister = 0; 					// 0 : Don't Clear, 1 : Clear All, 2 : Clear While Skipping Regular Monsters
 	//NTConfig_Script.push("NTBarracks.ntj");
@@ -139,7 +126,7 @@ function NT_LoadConfig()
 		NTConfig_ClearAndarielThrone = false;			// Set to true to clear the throne room after Andy, false if not
 
 	//NTConfig_Script.push("NTMooMooFarm.ntj");			// There are currently NO options for this script, still working on it
-		NTConfig_CowKingChicken = 95;  					// percentage of king's hp if below this the bot will close d2.  Set to 0 to disable.  Note that this has a limited range will NOT help in pubs
+		NTConfig_CowKingChicken = 95;  				// percentage of king's hp if below this the bot will close d2.  Set to 0 to disable.  Note that this has a limited range will NOT help in pubs
 
 	//------------------------------------------------------------------------------
 	// Act 2 Scripts
@@ -225,8 +212,7 @@ function NT_LoadConfig()
 		NTConfig_ClearRiverOfFlame = -1; 				// 0 : Hephasto only, 1 : Clear All, 2 : Clear While Skipping Regular Monsters, -1 : Disable
 	//NTConfig_Script.push("NTChaosSanctuary.ntj");
 		NTConfig_Dodge = false;	 						//
-		NTConfig_FastChaos = false;	 					// Set true to clear seal area/bosses, false for full
-		NTConfig_EvenFasterChaos = false;				// Set to true to clear ONLY the seal bosses at each seal.
+		NTConfig_FastChaos = false;	 					// Set true to clear seals/bosses, false for full
 		NTConfig_Entrance = false;	 					// Set true to start from Entrance, false for Star
 		NTConfig_LeechSupport = false;	 				// Set true to support leechers, false if not
 
@@ -234,8 +220,8 @@ function NT_LoadConfig()
 	// "Public Diablo Settings" //
 	//--------------------------//
 
-	NTConfig_CS_SafeTP 			= "Chaos TP up.";			// Message for the Safe TP
-	NTConfig_CS_HotTP 			= "Chaos Hot TP.";			// Message for the Hot TP
+	NTConfig_CS_EntranceTP 		= "Entrance TP up.";		// Message for the Entrance TP
+	NTConfig_CS_StarTP 			= "Star TP up.";			// Message for the Star TP
 	NTConfig_CS_NextGame		= "New Game Is ";			// Message after Diablo is dead
 	NTConfig_CS_LeechSupTP		= "Leech TP up.";			// Message for LeechSupport
 	NTConfig_CS_SealBasher		= "Don't hit the seals.";	// Message if people hit seals (Seal bashers, lol)
@@ -296,7 +282,7 @@ function NT_LoadConfig()
 	Baal_HotTp = "TP up.";												// Hot TP message. (NTConfig_MakeHotTP must be set true.)
 	Baal_SafeTp = "TP safe.";											// What to say when bot opens the safe TP.
 	Baal_KillBaalMessage = "Let's kill Baal!";							// What to say after last wave, before entering chamber.
-	Baal_NextGameMessage = "Etal Bot - ProjectEtal.com";				// What to say after killing Baal. (We appriciate those who leave the shameless plug.)
+	Baal_NextGameMessage = "Etal Bot - ProjectEtal.com";						// What to say after killing Baal. (We appriciate those who leave the shameless plug.)
 	Baal_FreeSpaceMessage = "Towning to clear space";  					// Used with NTConfig_FreeSpaceBeforeBaal for message before going to town to clear inventory
 	Baal_BSayNextGame = "Next game will be ";							// Message before announcing next game.  "Next game will be chaos" for example. (Leave empty to disable.)
 
@@ -338,22 +324,27 @@ function NT_LoadConfig()
 	// Misc. Scripts
 	//------------------------------------------------------------------------------
 
-	//NTConfig_Script.push("WpGiver.ntj");				// Gives waypoints to another character via in-game chat commands.
+	//NTConfig_Script.push("WpGiver.ntj");			// Gives waypoints to another character via in-game chat commands.
 	//NTConfig_Script.push("mulelogger.ntj");			// Blank Script, loads Libs, CharConfig & Nips & enters delay loop.
 	//NTConfig_Script.push("TLNipCheck.ntj");  			// Checks for errors in pickit files. (Alternatively, you can also use NumPad "+" while ingame.)
 	//NTConfig_Script.push("TLInventory.ntj"); 			// Logs items to text file. (Alternatively, you can use NumPad "5" while ingame.)
 		NTConfig_TLInventory_SkipEquipped   = true;     // Skip logging what you have equipped (useful for logging mules).
 
-	NTConfig_HostileHandler = true;						// true to use Hostile Handler 2
-		RunFromHostiles = true;							// true to leave game when hostiled
-		KillHostiler = true;							// true to kill the hostile player
-		TauntHostile = true;							// true to taunt the hostiler, false if not
+	//NTConfig_Script.push("NTManual.ntj");				// Manual play with some enhancements (auto potting etc).
+		NTConfig_PickitOn = false; 						// Manual play with pickit.
+		NTConfig_ShowEnemies = false; 					// Manual play with enemies on minimap
+		NTConfig_RevealMap = false; 					// Manual play with maphack
+		NTConfig_CheckStuff = false; 					// Gives warning when low on pots, scrolls or merc is dead.
+
+	NTConfig_HostileHandler = true;					// true to use Hostile Handler 2
+		RunFromHostiles = true;						// true to leave game when hostiled
+		KillHostiler = true;						// true to kill the hostile player
+		TauntHostile = true;						// true to taunt the hostiler, false if not
 
 	//------------------------------------------------------------------------------
 	// Speed Settings
 	//------------------------------------------------------------------------------
 	me.maxgametime = 1200; 								// Maximum game length in seconds (0 is infinite).
-	NTConfig_MinIngameTime = 0;							// Amount of minutes to remain ingame. Ensures game length. Setting is in minutes
 	NTConfig_StartDelay = 0;							// Delay time in milliseconds to wait at start.
 	NTConfig_AreaDelay = 500;							// Delay time in milliseconds to wait on each area change.
 	NTConfig_SnagDelay = 500;							// Delay time in milliseconds (added to ping delay) to wait before each pickit call.
@@ -369,11 +360,16 @@ function NT_LoadConfig()
 	NTConfig_ManaThresh = 30;							// Drink a mana potion if under this percent of mana.
 	NTConfig_ManaRejuvThresh = 0;						// Drink a rejuvenation potion if under this percent of mana. (Will not use mana potions under this %)
 
-	NTConfig_EtalLifeChicken = 30;						// This is your Etal chicken life percent. If you go below this life total, exit D2.
+	NTConfig_LifeChicken = 20;							// This is your D2NT chicken life percent. If you go below this life total, exit game.
+	NTConfig_ManaChicken = 0;							// This is your D2NT chicken mana percent. If you go below this mana total, exit game.
+
+	// These chicken values are optional and can run alongside the traditional D2NT chicken or as a standalone chicken
+	// The Etal version comes with additional logging and will restart D2 instead of exitting the game for crash protection
+	// To disable, use 0
+	NTConfig_EtalLifeChicken = 0;						// This is your Etal chicken life percent. If you go below this life total, exit D2.
 	NTConfig_EtalManaChicken = 0;						// This is your Etal chicken mana percent. If you go below this mana total, exit D2.
-	NTConfig_ChickenStyle = 0;							// What kind of chicken? 0 to CloseD2 - 1 to Exit game (Closing D2 is safer)
-	
-	NTConfig_TPChicken = 0; 							// Under this % of health will attempt to tp to town and heal. (Set 0 to disable.)
+
+	NTConfig_TPChicken = 60; 							// Under this % of health will attempt to tp to town and heal. (Set 0 to disable.)
 	NTConfig_MercTPChicken = 0;						  	// Under this % of Merc health will attempt to tp to town and heal. (Set to 0 to disable.)
 
 	NTConfig_MercLifeThresh = 50;						// Give merc a health potion if under this percent of life.
@@ -384,7 +380,7 @@ function NT_LoadConfig()
 	// Inventory settings
 	//------------------------------------------------------------------------------
 	NTConfig_FreeSpaceBeforeBoss = 2;					// If # of free columns is less than this, will town before killing bosses.
-	NTConfig_FreeSpace = 4;								// Number of free columns. If bot has less than this amount after id'ing, it will go to stash.
+	NTConfig_FreeSpace = 0;								// Number of free columns. If bot has less than this amount after id'ing, it will go to stash.
 
 	// These numbers correspond to your inventory. Set 0 to keep whatever is there, 1 to have the bot manage the slot.
 	NTConfig_Columns[0] = [0,0,0,0,0,0,0,0,0,0];
@@ -622,11 +618,10 @@ function NT_LoadConfig()
 	//------------------------------------------------------------------------------
 	// General configuration
 	//------------------------------------------------------------------------------
-	NTConfig_PublicMode = false;						// Enables "Public" features (Partying, Tp'ing etc). (Cannot be true while NTConfig_PartyOnlyLeader is.)
+	NTConfig_PublicMode = false;							// Enables "Public" features (Partying, Tp'ing etc). (Cannot be true while NTConfig_PartyOnlyLeader is.)
 	NTConfig_CheckCloneDiablo = true;					// Set to true if you want to wait in game after "Diablo Walks the Earth" msg.
 	NTConfig_SoJWaitTime = 5;							// Time in minutes to wait for the next SoJ sale. Set to 0 to disable SoJ notifier.
-	NTConfig_ExitonDclone = false;						// Exit game on Diablo Walks
-	NTConfig_FastPickit = false;						// This is a new option that causes far less crashes(maybe none).  Is independent of snag delay
+	NTConfig_FastPickit = false;							// This is a new option that causes far less crashes(maybe none).  Is independent of snag delay
 	NTConfig_UseMerc = false;							// Set true if you will use a mercenary, will revive merc at a reviver npc.
 	NTConfig_ResetEnigma = false;  						// Set true to reset enigma when tele bug exists. (Safe.)
 	NTConfig_QuitOnPing = 900;							// Ping threshold. (0 to disable.)
@@ -646,17 +641,13 @@ function NT_LoadConfig()
 	NTConfig_MinPots = 1;								// If less then this many (Health or Mana) potions, will return to town on checkselfsafe 0x01 is calls.
 	NTConfig_CheckPotsTown = 0;							// If less then this many (Health or Mana) potions, will shop them in normal town functions.  Set 0 to always shop them
 	NTConfig_AutoMule = false; 							// Set to true to enable muling. Requires NTMule entry point.
-	NTConfig_FinishRun = false; 						// true will finish current game. Good for if running the leecher entry or if running main as leader.
-	NTConfig_MuleStash = 8; 							// Set this to the free block limit in your Stash. If less than this mule.
+	NTConfig_FinishRun = false; 							// true will finish current game. Good for if running the leecher entry or if running main as leader.
+	NTConfig_MuleStash = 8; 								// Set this to the free block limit in your Stash. If less than this mule.
 	NTConfig_MuleInv = 2; 								// Set this to the free column limit in your Inventory. If less than this mule. Must be set to higher than NTConfig_FreeSpace
 	NTConfig_UseKeysForPlaceHolder = true;				// Set to true to keep a key in your inventory. (In the event that the bot has no space for ID scrolls, will sell the key instead of one of your items.)
 	NTConfig_PropsForEtal = 1; 							// Advertising etal at the end of public games.  set to 0 to disable.  Set to 1 or greater for the number of phrases spoken before exiting public games.  See D2NT\scripts\NTBot\char_configs\EtalPR.ntl for instructions on adding or removing phrases
 	NTConfig_MercStats = false;							// Prints Merc stats to Common Log with Char stats if true
-	NTConfig_VoyageToMissingWps = true; 				// when missing a wp setting this to true will have the bot path to and grab the missing wp
-
-	NTConfig_ChatRecording = false;						// Logs all in game chat to a .txt file in D2NT/scripts/logs/ChatR folder
-	NTConfig_WhisperToManager = false;					// Logs whispers from in-game to your manager
-	NTConfig_WhisperToTab = "common";					// Choose which tab whispers go to, either "common" or "item"
+	NTConfig_VoyageToMissingWps = true; 					// when missing a wp setting this to true will have the bot path to and grab the missing wp
 
 	//-------------------------------------------------------------------------------
 	// Advanced XML Item Logging
@@ -724,7 +715,7 @@ function NT_LoadConfig()
 	NTConfig_IdentAtCain = false;						// Identify @ Cain? (Quicker & will skip using cain if something in inventory is suppose to be kept unidentified. Will not log sold items.)
 	NTConfig_PocketChange = 500000;						// Amount of gold you want to keep on hand used for repairs. Make adjustments to this & repair % to keep equipment from breaking.
 	NTConfig_DontCainAct = [];							// List any act you don't want to use cain on seperated by ",".  Set to "0" to id in all acts.
-	NTConfig_Repair = "60";								// Set to how much durability you want to repair at, 40 is normal, 99 is as soon as you loose one point.
+	NTConfig_Repair = "40";								// Set to how much durability you want to repair at, 40 is normal, 99 is as soon as you loose one point.
 	NTConfig_AlwaysUseCain = false;						// Always use cain to ID? (Will ID items which are set to keep unid if they are in the inventory when visiting Cain.)
 	NTConfig_DropCainItems = false;						// set to true to drop items/false sells them to vendor
 
@@ -780,15 +771,13 @@ function NT_LoadConfig()
 	NTConfig_AttackSkill[8] = -1; 	// Tertiary untimed skill.
 	NTConfig_AttackSkill[9] = -1; 	// Primary skill to boss (diablo/baal/meph/etc) Not immune to spells I guess.
 
-	NTConfig_DiaSpam = 0;								// Skill to spam before Diablo Spawns
-
 	prewavespot = [15092, 5040];						// Pre-Wave standing (X,Y) coordinates. (For Baal Scripts.)
 
-	NTconfig_HighMaxAttack = false;						// Use HighMaxAttacks? (False = LowMaxAttacks.) High/Low are below.
+	NTconfig_HighMaxAttack = true;						// Use HighMaxAttacks? (False = LowMaxAttacks.) High/Low are below.
 	NTConfig_HighMaxAttackAreas = [131];				// If above is set false (you're using LowMaxAttacks), add areas to bypass LowMaxAttacks and use HighMaxAttacks instead. (Recommended in Baal's Throne Room.)
 
 	NTConfig_HighMaxAttacks = 300;						// Maximum number of attacks (HIGH) before skipping.
-	NTConfig_LowMaxAttacks = 20;						// Maximum number of attacks (LOW) before skipping.
+	NTConfig_LowMaxAttacks = 15;						// Maximum number of attacks (LOW) before skipping.
 
 	MonstersToAttackFirst = 							// Monster ID's to attack first. (Monsters which resurrect / spawn others are good choices.)
 	[58,59,60,61,62,101,102,103,104,190,191,
@@ -805,19 +794,16 @@ function NT_LoadConfig()
 	// 01=Potion. 02=Poison. 04=Amplify Damage. 08=Weaken. 10=Iron Maiden. 20=Decrepify. 40=Lower Resist. 80=Blood Mana.
 	// Use this format: ['01','02'] etc. Add as many or as few as you want.
 
-	NTConfig_CheckSelfSafe = ['01'];
+	NTConfig_CheckSelfSafe = [];
 
 	// Check Merc's Safe. Set to []; for none.
 	// 01=Death, 02=Poison, 04=Amplify Damage, 08=Weaken, 10=Iron Maiden, 20=Decrepify, 40=Lower Resist
 	// Use this format: ['01','02'] etc. Add as many or as few as you want.
 
-	NTConfig_CheckMercSafe = ['01'];
+	NTConfig_CheckMercSafe = [];
 
 	//------------------------------------------------------------------------------
 	// Class Specific Settings
 	//------------------------------------------------------------------------------
-
-	NTConfig_FarCastAma = false;		// Set to true to use FarCasting, look at the ReadMe.txt in trunk/extras/farcast/ folder
-	NTConfig_FCRange = 24;				// The range for your FarCastomg. 25 is good, but you can modify it.
 }
 
